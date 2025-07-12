@@ -17,12 +17,12 @@ namespace DanceTillYouDrop;
 // https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
 // https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces
 
-[BepInPlugin("com.github.Elteeb.DanceTillYouDrop", "DanceTillYouDrop", "0.1.0")]
+[BepInPlugin("com.github.Elteeb.DanceTillYouDrop", "DanceTillYouDrop", "0.2.0")]
 public partial class Plugin : BaseUnityPlugin
 {
     public const string Id = "com.github.Elteeb.DanceTillYouDrop";
     public static string Name => "DanceTillYouDrop";
-    public static string Version => "0.1.0";
+    public static string Version => "0.2.0";
     internal static ManualLogSource Log { get; private set; } = null!;
     private static string[] emotesList = new[]
     {

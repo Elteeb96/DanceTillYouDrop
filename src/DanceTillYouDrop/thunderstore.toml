@@ -8,8 +8,9 @@ repository = "https://thunderstore.io"
 namespace = "Elteeb"
 name = "DanceTillYouDrop"
 description = "Makes emotes not stop until you move."
-websiteUrl = ""
+websiteUrl = "https://github.com/Elteeb96/DanceTillYouDrop/tree/master"
 containsNsfwContent = false
+version = "0.2.0"
 
 [package.dependencies]
 BepInEx-BepInExPack_PEAK = "5.4.2403"

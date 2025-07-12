@@ -8,8 +8,10 @@
     <!-- This is the display name of your mod. Example: BepInEx Template -->
     <AssemblyTitle>ModName</AssemblyTitle>
     <!-- This is the version number of your mod. -->
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <RootNamespace>ModName</RootNamespace>
+    <Title>Dance Till You Drop</Title>
+    <Authors>Elteeb96</Authors>
   </PropertyGroup>
 
   <!--

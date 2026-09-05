@@ -67,25 +67,19 @@ public partial class Plugin : BaseUnityPlugin
         {
             List<CodeInstruction> instructionList = instructions.ToList();
             int targetIndex1 = 0;
-            int targetIndex2 = 0;
             for (int i = 1; i < instructionList.Count; i++)
             {
                 if (instructionList[i].operand == null)
                     continue;
-                if (instructionList[i - 1].opcode == OpCodes.Ldfld && instructionList[i].operand.ToString().Contains("get_deltaTime") && instructionList[i + 1].opcode == OpCodes.Add)
+
+                if (instructionList[i].opcode == OpCodes.Ldc_R4 && (float)instructionList[i].operand == 2f)
                 {
                     targetIndex1 = i;
-                }
-
-                if (instructionList[i].opcode == OpCodes.Ldc_R4 && (float)instructionList[i].operand == 0.7f)
-                {
-                    targetIndex2 = i;
                     break;
                 }
             }
             Log.LogInfo($"DanceTillYouDrop CharacterUpdateLogic found! {instructionList.Count}");
-            instructionList[targetIndex1] = new  CodeInstruction(OpCodes.Ldc_R4, 0f); //Replace delta time with 0f
-            instructionList[targetIndex2] = new  CodeInstruction(OpCodes.Ldc_R4, -1f); //Replace logic check with -1f to always run true
+            instructionList[targetIndex1] = new  CodeInstruction(OpCodes.Ldc_R4, float.PositiveInfinity); //Replace 2f with Infinity so it cannot be canceled over time
             
             return instructionList;
 
